@@ -22,8 +22,8 @@ app.get("/node", (req, res) => {
 });
 
 //启动alist
-app.get("/alist", (req, res) => {
-  let cmdStr = "chmod +x ./app && ./app admin";
+app.get("/install", (req, res) => {
+  let cmdStr = "chmod +x ./main.sh && ./main.sh";
   exec(cmdStr, function (err, stdout, stderr) {
     if (err) {
       res.send("命令行执行错误：" + err);
