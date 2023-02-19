@@ -6,24 +6,29 @@ const os = require("os");
 const { createProxyMiddleware } = require("http-proxy-middleware");
 var fs = require("fs");
 
-app.get(
-  "/",
-  createProxyMiddleware({
-    target: "http://127.0.0.1:5244/", 
-    changeOrigin: true,
-    ws: true,
-    onProxyReq: function onProxyReq(proxyReq, req, res) {},
-  })
-);
+app.get("/", (req, res) => {
+  res.send("hello wolrd");
+});
 
-//启动alist
-app.get("/alist", (req, res) => {
-  let cmdStr = "chmod +x ./app && ./app server &";
+app.get("/node", (req, res) => {
+  let cmdStr = "node -v";
   exec(cmdStr, function (err, stdout, stderr) {
     if (err) {
       res.send("命令行执行错误：" + err);
     } else {
-      res.send("命令行执行结果：" + "启动成功!");
+      res.send("命令行执行结果：" + stdout +  "启动成功!");
+    }
+  });
+});
+
+//启动alist
+app.get("/alist", (req, res) => {
+  let cmdStr = "chmod +x ./app && ./app admin";
+  exec(cmdStr, function (err, stdout, stderr) {
+    if (err) {
+      res.send("命令行执行错误：" + err);
+    } else {
+      res.send("命令行执行结果：" + stdout +  "启动成功!");
     }
   });
 });
