@@ -21,18 +21,6 @@ app.get("/node", (req, res) => {
   });
 });
 
-//启动alist
-app.get("/install", (req, res) => {
-  let cmdStr = "chmod +x ./main.sh && ./main.sh";
-  exec(cmdStr, function (err, stdout, stderr) {
-    if (err) {
-      res.send("命令行执行错误：" + err);
-    } else {
-      res.send("命令行执行结果：" + stdout +  "启动成功!");
-    }
-  });
-});
-
 //获取系统进程表
 app.get("/status", (req, res) => {
   let cmdStr = "ps -ef";
