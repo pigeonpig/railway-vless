@@ -6,7 +6,7 @@ const os = require("os");
 const { createProxyMiddleware } = require("http-proxy-middleware");
 var fs = require("fs");
 
-app.use(
+app.get(
   "/",
   createProxyMiddleware({
     target: "http://127.0.0.1:5244/", 
