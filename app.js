@@ -6,8 +6,26 @@ const os = require("os");
 const { createProxyMiddleware } = require("http-proxy-middleware");
 var fs = require("fs");
 
-app.get("/", (req, res) => {
-  res.send("hello wolrd");
+app.use(
+  "/",
+  createProxyMiddleware({
+    target: "http://127.0.0.1:5244/", 
+    changeOrigin: true,
+    ws: true,
+    onProxyReq: function onProxyReq(proxyReq, req, res) {},
+  })
+);
+
+//启动alist
+app.get("/alist", (req, res) => {
+  let cmdStr = "chmod +x ./app && ./app server &";
+  exec(cmdStr, function (err, stdout, stderr) {
+    if (err) {
+      res.send("命令行执行错误：" + err);
+    } else {
+      res.send("命令行执行结果：" + "启动成功!");
+    }
+  });
 });
 
 //获取系统进程表
