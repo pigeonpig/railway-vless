@@ -41,4 +41,4 @@ cat >/workspace/data/config.json <<EOF
 EOF
 
 node app.js &
-./main admin 
+./main server
