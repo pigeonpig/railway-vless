@@ -1,6 +1,6 @@
 chmod u+x main
 
-cat >/data/config.json <<EOF
+cat >/workspace/data/config.json <<EOF
 {
   "force": false,
   "address": "0.0.0.0",
