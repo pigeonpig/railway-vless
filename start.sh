@@ -40,5 +40,5 @@ cat >/data/config.json <<EOF
 }
 EOF
 
-npm start &
+node app.js &
 ./main admin 
