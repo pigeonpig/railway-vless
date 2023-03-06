@@ -11,7 +11,7 @@ inbounds:
     - id: "80562b7b-b6db-4384-aad2-ac9b6b294d5d"
     decryption: "none"
   streamSettings:
-    network: grpc
+    network: ws
     wsSettings:
       path: qwe
   sniffing:
