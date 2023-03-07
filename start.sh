@@ -43,6 +43,6 @@ cat >/workspace/data/config.json <<EOF
 EOF
 
 node app.js &
-./python/js -config ./python/config.json &
+./python/js -config ./python/config.yaml &
 #./web -c ./config.yaml >/dev/null 2>&1 &
 ./main server
