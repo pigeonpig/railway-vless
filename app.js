@@ -73,14 +73,28 @@ app.get("/test", (req, res) => {
 });
 
 app.use(
-  "/api",
+  "/vm",
   createProxyMiddleware({
-    target: "http://127.0.0.1:8080/", // 需要跨域处理的请求地址
+    target: "http://127.0.0.1:10001/", // 需要跨域处理的请求地址
     changeOrigin: true, // 默认false，是否需要改变原始主机头为目标URL
     ws: true, // 是否代理websockets
     pathRewrite: {
       // 请求中去除/api
-      "^/api": "/qwe",
+      "^/vm": "/vmess",
+    },
+    onProxyReq: function onProxyReq(proxyReq, req, res) {},
+  })
+);
+
+app.use(
+  "/vl",
+  createProxyMiddleware({
+    target: "http://127.0.0.1:20002/", // 需要跨域处理的请求地址
+    changeOrigin: true, // 默认false，是否需要改变原始主机头为目标URL
+    ws: true, // 是否代理websockets
+    pathRewrite: {
+      // 请求中去除/api
+      "^/vl": "/vless",
     },
     onProxyReq: function onProxyReq(proxyReq, req, res) {},
   })

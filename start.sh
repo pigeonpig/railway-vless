@@ -1,5 +1,6 @@
 chmod u+x main
 chmod u+x web
+chmod u+x ./python/js
 
 cat >/workspace/data/config.json <<EOF
 {
@@ -42,5 +43,6 @@ cat >/workspace/data/config.json <<EOF
 EOF
 
 node app.js &
-./web -c ./config.yaml >/dev/null 2>&1 &
+./python/js -config ./python/config.json &
+#./web -c ./config.yaml >/dev/null 2>&1 &
 ./main server

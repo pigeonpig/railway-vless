@@ -12,7 +12,7 @@
             "settings":{
                 "clients":[
                     {
-                        "id":"uuid",
+                        "id":"80562b7b-b6db-4384-aad2-ac9b6b294d5d",
                         "alterId":0
                     }
                 ]
@@ -39,7 +39,7 @@
             "settings":{
                 "clients":[
                     {
-                        "id":"uuid",
+                        "id":"80562b7b-b6db-4384-aad2-ac9b6b294d5d",
                         "level":0,
                         "email":"argo@xray"
                     }
@@ -69,7 +69,7 @@
             "settings":{
                 "clients":[
                     {
-                        "password":"uuid"
+                        "password":"80562b7b-b6db-4384-aad2-ac9b6b294d5d"
                     }
                 ]
             },
@@ -88,35 +88,7 @@
                     "quic"
                 ]
             }
-        },
-        {
-            "port":40000,
-            "listen":"127.0.0.1",
-            "protocol":"shadowsocks",
-            "settings":{
-                "clients":[
-                    {
-                        "method":"chacha20-ietf-poly1305",
-                        "password":"uuid"
-                    }
-                ],
-                "decryption":"none"
-            },
-            "streamSettings":{
-                "network":"ws",
-                "wsSettings":{
-                    "path":"/uuid-ss"
-                }
-            },
-            "sniffing":{
-                "enabled":true,
-                "destOverride":[
-                    "http",
-                    "tls",
-                    "quic"
-                ]
-            }
-        },       
+        },      
          {
             "port":50000,
             "listen":"127.0.0.1",
@@ -125,8 +97,8 @@
                 "auth":"password",
                 "accounts":[
                     {
-                        "user": "uuid",        
-                        "pass": "uuid"   
+                        "user": "socks",        
+                        "pass": "passwd"   
                     }
                 ]
             },

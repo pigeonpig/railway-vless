@@ -1,0 +1,2 @@
+2023/03/07 12:16:56 [emerg] 19530#0: getpwnam("nginx") failed
+2023/03/07 12:19:44 [emerg] 20837#0: getpwnam("nginx") failed
